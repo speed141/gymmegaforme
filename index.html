@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Mega Forme — Chicoutimi | 24h / 365 jours</title>
+  <meta name="description" content="Gym Mega Forme à Chicoutimi. Ouvert 24h/365 jours. Équipements Atlantis de haute qualité. Abonnement à accès immédiat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --noir: #0a0a0a;
+      --noir2: #111111;
+      --noir3: #1a1a1a;
+      --gris: #2a2a2a;
+      --gris-clair: #555;
+      --or: #c9a84c;
+      --or-clair: #e8c96a;
+      --or-pale: #f5e9c0;
+      --blanc: #f5f5f0;
+      --blanc-pur: #ffffff;
+      --rouge: #c0392b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--noir);
+      color: var(--blanc);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: var(--or);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--blanc); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--or); }
+
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--or);
+      color: var(--noir);
+      padding: 0.6rem 1.6rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--or-clair); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 3rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.75) 60%, rgba(10,10,10,0.95) 100%),
+        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 0.35rem 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      color: var(--blanc);
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      color: var(--or);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.6);
+      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--or);
+      color: var(--noir);
+      padding: 1rem 2.8rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--or-clair);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+    }
+
+    .btn-secondary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: transparent;
+      color: var(--blanc);
+      padding: 1rem 2.8rem;
+      text-decoration: none;
+      border: 1px solid rgba(245,245,240,0.3);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--or); color: var(--or); }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      z-index: 1;
+      display: flex;
+      gap: 3rem;
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+
+    .stat { text-align: right; }
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--or);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.5);
+      margin-top: 0.2rem;
+    }
+
+    /* ─── BANDE DÉFILANTE ─── */
+    .ticker {
+      background: var(--or);
+      color: var(--noir);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 25s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0 3rem;
+    }
+
+    .ticker-dot {
+      color: rgba(10,10,10,0.4);
+      font-size: 1.2rem;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ─── SECTIONS COMMUNES ─── */
+    section { padding: 7rem 3rem; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      color: var(--blanc);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── AVANTAGES ─── */
+    .avantages {
+      background: var(--noir2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .avantages-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .avantages-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .avantages-header p {
+      max-width: 420px;
+      color: rgba(245,245,240,0.55);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .avantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.08);
+    }
+
+    .avantage-card {
+      background: var(--noir2);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avantage-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--or);
+      transition: width 0.4s ease;
+    }
+
+    .avantage-card:hover { background: var(--noir3); }
+    .avantage-card:hover::before { width: 100%; }
+
+    .avantage-icon {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .avantage-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blanc);
+      margin-bottom: 0.6rem;
+    }
+
+    .avantage-card p {
+      font-size: 0.9rem;
+      color: rgba(245,245,240,0.5);
+      line-height: 1.6;
+    }
+
+    /* ─── CE QUE NOS MEMBRES ADORENT ─── */
+    .membres {
+      background: var(--noir);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .membres::before {
+      content: 'MÉGA';
+      position: absolute;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22vw;
+      color: rgba(201,168,76,0.03);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .membres-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .membres-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+
+    .membre-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(201,168,76,0.1);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .membre-item:hover {
+      border-color: rgba(201,168,76,0.4);
+      background: rgba(201,168,76,0.04);
+    }
+
+    .membre-check {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid var(--or);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--or);
+      font-size: 0.8rem;
+    }
+
+    .membre-item span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      color: rgba(245,245,240,0.85);
+    }
+
+    /* ─── ABONNEMENTS ─── */
+    .abonnements {
+      background: var(--noir2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .abonnements-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .abonnements-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .abonnements-header p {
+      color: rgba(245,245,240,0.5);
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1px;
+      background: rgba(201,168,76,0.08);
+      margin-bottom: 3rem;
+    }
+
+    .plan-card {
+      background: var(--noir2);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .plan-card.featured {
+      background: var(--noir3);
+      border: 1px solid var(--or);
+      margin: -1px;
+      z-index: 1;
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--or);
+      color: var(--noir);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.5);
+      margin-bottom: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: var(--blanc);
+      line-height: 1;
+    }
+
+    .plan-card.featured .plan-price { color: var(--or); }
+
+    .plan-period {
+      font-size: 0.8rem;
+      color: rgba(245,245,240,0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-original {
+      font-size: 0.8rem;
+      color: rgba(245,245,240,0.3);
+      text-decoration: line-through;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-saving {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      color: var(--or);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-detail {
+      font-size: 0.85rem;
+      color: rgba(245,245,240,0.45);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .abonnements-cta {
+      text-align: center;
+    }
+
+    .abonnements-cta p {
+      font-size: 0.85rem;
+      color: rgba(245,245,240,0.4);
+      margin-top: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary-large {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: var(--or);
+      color: var(--noir);
+      padding: 1.2rem 4rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary-large:hover {
+      background: var(--or-clair);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact {
+      background: var(--noir);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 2rem; }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--or);
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .contact-item-text {
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .contact-item-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.4);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item-value {
+      font-size: 1.05rem;
+      color: var(--blanc);
+    }
+
+    .contact-item-value a {
+      color: var(--blanc);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item-value a:hover { color: var(--or); }
+
+    .contact-map {
+      background: var(--gris);
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201,168,76,0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      filter: grayscale(80%) invert(10%);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--noir2);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--or);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: rgba(245,245,240,0.6); }
+
+    .footer-copy {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: rgba(245,245,240,0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,245,240,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--or); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .plans-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">GYM<span> MEGA FORME</span></a>
+    <ul class="nav-links">
+      <li><a href="#avantages">Le Gym</a></li>
+      <li><a href="#membres">Membres</a></li>
+      <li><a href="#abonnements">Abonnements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.genifly.ca" target="_blank" rel="noopener" class="nav-cta">Je m'abonne</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Chicoutimi · Place du Royaume · Accès immédiat</div>
+      <h1>OFFREZ-VOUS<br><em>L'ESPACE</em></h1>
+      <p class="hero-sub">Ouvert 24 heures / 365 jours · Aucune réservation requise</p>
+      <div class="hero-ctas">
+        <a href="https://www.genifly.ca" target="_blank" rel="noopener" class="btn-primary">Je m'abonne aujourd'hui</a>
+        <a href="#abonnements" class="btn-secondary">Voir les tarifs</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">24H</div>
+        <div class="stat-label">Accès continu</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">365J</div>
+        <div class="stat-label">Par année</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Accès 24h / 365 jours</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Équipements Atlantis</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Aucune réservation requise</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Abonnement à accès immédiat</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Propreté · Propreté · Propreté</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Place du Royaume · Chicoutimi</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <!-- repeat -->
+      <span class="ticker-item">Accès 24h / 365 jours</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Équipements Atlantis</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Aucune réservation requise</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Abonnement à accès immédiat</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Propreté · Propreté · Propreté</span>
+      <span class="ticker-item ticker-dot">✦</span>
+      <span class="ticker-item">Place du Royaume · Chicoutimi</span>
+      <span class="ticker-item ticker-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- AVANTAGES -->
+  <section class="avantages" id="avantages">
+    <div class="avantages-inner">
+      <div class="avantages-header">
+        <div>
+          <div class="section-label">Le gym</div>
+          <h2 class="section-title">UN GYM<br>SÉRIEUX</h2>
+        </div>
+        <p>Gym Mega Forme, c'est un espace conçu pour ceux qui s'entraînent vraiment. Des équipements de qualité professionnelle, une propreté irréprochable, et un accès total à toute heure du jour ou de la nuit.</p>
+      </div>
+      <div class="avantages-grid">
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">🏋️</span>
+          <h3>Gamme complète Atlantis</h3>
+          <p>Appareils de musculation Atlantis de haute qualité — la référence en équipement de gym professionnel.</p>
+        </div>
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">🚴</span>
+          <h3>Cardio à la fine pointe</h3>
+          <p>Équipements cardio dernier cri et en quantité suffisante — jamais d'attente, toujours disponibles.</p>
+        </div>
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">✨</span>
+          <h3>Propreté exemplaire</h3>
+          <p>Notre priorité absolue. Un environnement immaculé, entretenu avec soin chaque jour.</p>
+        </div>
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">🌙</span>
+          <h3>Ouvert 24h / 365 jours</h3>
+          <p>Entraînez-vous à l'heure qui vous convient, même la nuit, même les jours fériés. Toujours ouvert.</p>
+        </div>
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">🅿️</span>
+          <h3>Stationnement à la porte</h3>
+          <p>Stationnement à quelques pas de l'entrée — pratique et accessible en toute saison.</p>
+        </div>
+        <div class="avantage-card reveal">
+          <span class="avantage-icon">🏢</span>
+          <h3>120 pieds de fenestration</h3>
+          <p>Un grand espace lumineux avec 120 pieds de fenestration, situé à l'arrière de Place du Royaume.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUE NOS MEMBRES ADORENT -->
+  <section class="membres" id="membres">
+    <div class="membres-inner">
+      <div class="section-label reveal">Témoignages</div>
+      <h2 class="section-title reveal">CE QUE NOS<br>MEMBRES ADORENT</h2>
+      <div class="membres-list">
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>La propreté irréprochable</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>Le bas achalandage</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>L'accès 24h / 24, 365 jours par année</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>La qualité des équipements Atlantis</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>Le stationnement à quelques pas de la porte</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>Le grand espace et les 120 pieds de fenestration</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>L'emplacement idéal à Place du Royaume</span>
+        </div>
+        <div class="membre-item reveal">
+          <div class="membre-check">✓</div>
+          <span>Le support en tout temps · 418-698-3963</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABONNEMENTS -->
+  <section class="abonnements" id="abonnements">
+    <div class="abonnements-inner">
+      <div class="abonnements-header">
+        <div class="section-label">Tarifs</div>
+        <h2 class="section-title">CHOISISSEZ<br>VOTRE FORMULE</h2>
+        <p>Abonnement à accès immédiat — commencez dès aujourd'hui</p>
+      </div>
+      <div class="plans-grid">
+        <!-- 12 mois mensuel -->
+        <div class="plan-card reveal">
+          <div class="plan-name">12 mois · mensuel</div>
+          <div class="plan-price">$49<sup style="font-size:1.5rem">.99</sup></div>
+          <div class="plan-period">/mois · 12 paiements préautorisés</div>
+          <div class="plan-original">599.88 $/an</div>
+          <div class="plan-detail">Paiements mensuels automatiques.<br>Flexibilité maximale.</div>
+        </div>
+        <!-- 12 mois 1 versement - FEATURED -->
+        <div class="plan-card featured reveal">
+          <div class="plan-badge">⭐ Meilleure valeur</div>
+          <div class="plan-name">12 mois · 1 versement</div>
+          <div class="plan-price">$549</div>
+          <div class="plan-period">paiement unique</div>
+          <div class="plan-saving">Économisez 50 $</div>
+          <div class="plan-detail">Payez une fois, profitez toute l'année.<br>Le meilleur rapport qualité/prix.</div>
+        </div>
+        <!-- 6 mois -->
+        <div class="plan-card reveal">
+          <div class="plan-name">6 mois</div>
+          <div class="plan-price">$399</div>
+          <div class="plan-period">paiement unique</div>
+          <div class="plan-original">&nbsp;</div>
+          <div class="plan-detail">Idéal pour une saison complète<br>d'entraînement intensif.</div>
+        </div>
+        <!-- 3 mois -->
+        <div class="plan-card reveal">
+          <div class="plan-name">3 mois</div>
+          <div class="plan-price">$299</div>
+          <div class="plan-period">paiement unique</div>
+          <div class="plan-original">&nbsp;</div>
+          <div class="plan-detail">Parfait pour commencer<br>et découvrir le gym.</div>
+        </div>
+      </div>
+      <div class="abonnements-cta reveal">
+        <a href="https://www.genifly.ca" target="_blank" rel="noopener" class="btn-primary-large">Je m'abonne aujourd'hui — Accès immédiat</a>
+        <p>*** Accès immédiat dès la souscription · Géré par Genifly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-label reveal">Nous joindre</div>
+        <h2 class="section-title reveal">VENEZ NOUS<br>VOIR</h2>
+        <div class="contact-details">
+          <div class="contact-item reveal">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Adresse</div>
+              <div class="contact-item-value">À l'arrière de Place du Royaume<br>Chicoutimi, Québec</div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Heures d'ouverture</div>
+              <div class="contact-item-value">24 heures / 365 jours</div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <div class="contact-icon">📞</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Téléphone · Texto</div>
+              <div class="contact-item-value"><a href="tel:4186983963">418-698-3963</a></div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Courriel</div>
+              <div class="contact-item-value"><a href="mailto:gymmegaforme@hotmail.com">gymmegaforme@hotmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.5!2d-71.0700!3d48.4200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc01e8a7a7a7a7a%3A0x1!2sPlace%20du%20Royaume%2C%20Chicoutimi%2C%20QC!5e0!3m2!1sfr!2sca!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Gym Mega Forme - Place du Royaume Chicoutimi">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">GYM <span>MEGA FORME</span></a>
+    <ul class="footer-links">
+      <li><a href="#avantages">Le Gym</a></li>
+      <li><a href="#abonnements">Abonnements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 Gym Mega Forme · Chicoutimi · Tous droits réservés</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
